@@ -1,0 +1,15 @@
+
+<template name="adminDashboard">
+  <h2>Admin Dashboard</h2>
+  <ul>
+    {{#each transactions}}
+      <li>
+        Loan ID: {{_id}}, Borrower: {{borrowerId}}, Lender: {{lenderId}}, Amount: {{amount}}
+        Status: {{status}}
+        {{#if isPending status}}
+          <button class="confirm-payment" data-loan-id="{{_id}}">Confirm Payment</button>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</template>

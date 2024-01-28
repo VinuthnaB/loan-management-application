@@ -1,0 +1,23 @@
+
+<template name="userDashboard">
+  <h2>User Dashboard</h2>
+  <h3>Loan Requests:</h3>
+  <form id="loan-request-form">
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" required>
+    <button type="submit">Request Loan</button>
+  </form>
+
+  <ul>
+    {{#each loans}}
+      <li>Loan ID: {{_id}}, Amount: {{amount}}, Status: {{status}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Payment History:</h3>
+  <ul>
+    {{#each payments}}
+      <li>Payment ID: {{_id}}, Amount: {{amount}}, Status: {{status}}</li>
+    {{/each}}
+  </ul>
+</template>
